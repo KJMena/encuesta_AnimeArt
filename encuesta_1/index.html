@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta de Satisfacción</title>
+    <script src="./funciones.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #6e0404;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        #encuestaForm {
+            background-color: #d13838;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+            width: 80%;
+            max-width: 500px;
+            box-sizing: border-box;
+        }
+
+        h2 {
+            background-color: #6e028f;
+            color: white;
+            padding: 10px;
+            border-radius: 10px 10px 0 0;
+            margin: -20px -20px 10px -20px;
+            text-align: center;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        .pregunta {
+            margin-bottom: 20px;
+        }
+
+        .opciones {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .opciones label {
+            margin-right: 20px;
+        }
+
+        #btnEnviar {
+            display: block;
+            margin: 20px auto 0;
+            padding: 10px 20px;
+            background-color: white;
+            border: 2px solid #cc00ff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #resultados {
+            color: white; 
+            margin-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                flex-direction: column;
+                justify-content: flex-start;
+                height: auto;
+                padding: 20px;
+            }
+
+            #encuestaForm {
+                width: 100%;
+                padding: 15px;
+            }
+
+            h2 {
+                font-size: 1.2em;
+                padding: 8px;
+            }
+
+            label {
+                font-size: 0.9em;
+            }
+
+            #btnEnviar {
+                padding: 8px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <form id="encuestaForm">
+        <h2>¡Anime Art!</h2>
+
+        <div class="pregunta">
+            1.- ¿Te ha gustado la página?<br>
+            <div class="opciones">
+                <input type="radio" id="calidad1" name="calidad" value="Sí">
+                <label for="calidad1">Sí</label>
+                <input type="radio" id="calidad2" name="calidad" value="Casi Todo">
+                <label for="calidad2">Casi Todo</label>
+                <input type="radio" id="calidad3" name="calidad" value="Casi Nada">
+                <label for="calidad3">Casi Nada</label>
+                <input type="radio" id="calidad4" name="calidad" value="No">
+                <label for="calidad4">No</label>
+            </div>
+        </div>
+
+        <div class="pregunta">
+            2.- ¿Te gustaron la mayoría de los animes que aparecen?<br>
+            <div class="opciones">
+                <input type="radio" id="atencion1" name="atencion" value="Sí">
+                <label for="atencion1">Sí</label>
+                <input type="radio" id="atencion2" name="atencion" value="Casi Todo">
+                <label for="atencion2">Casi Todo</label>
+                <input type="radio" id="atencion3" name="atencion" value="Casi Nada">
+                <label for="atencion3">Casi Nada</label>
+                <input type="radio" id="atencion4" name="atencion" value="No">
+                <label for="atencion4">No</label>
+            </div>
+        </div>
+
+        <div class="pregunta">
+            3.- ¿Te gustó el arte que se utilizo?<br>
+            <div class="opciones">
+                <input type="radio" id="volveria1" name="volveria" value="Sí">
+                <label for="volveria1">Sí</label>
+                <input type="radio" id="volveria2" name="volveria" value="Casi Todo">
+                <label for="volveria2">Casi Todo</label>
+                <input type="radio" id="volveria3" name="volveria" value="Casi Nada">
+                <label for="volveria3">Casi Nada</label>
+                <input type="radio" id="volveria4" name="volveria" value="No">
+                <label for="volveria4">No</label>
+            </div>
+        </div>
+
+        <input type="button" name="btnEnviar" id="btnEnviar" value="Enviar" onclick="mostrarResultados()">
+    </form>
+
+    <div id="resultados"></div>
+</body>
+</html>
